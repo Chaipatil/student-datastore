@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+  input[type=email], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+    <script>
+        function myFunction() {
+          var inpObj  = document.getElementById("myname").value;
+          var lastname  = document.getElementById("lastname").value;
+          var email  = document.getElementById("EmailID").value; 
+          var pasword  = document.getElementById("numb").value;
+          var mobile  = document.getElementById("mobilenumber").value;
+          var msg  = document.getElementById("massage").value;
+         
+          // localStorage.setItem('inpObj',inpObj)
+          // localStorage.setItem('lastname',lastname)
+          // localStorage.setItem('email',email)
+          // localStorage.setItem('pasword',pasword)
+          // localStorage.setItem('mobile',mobile)
+          // localStorage.setItem('msg',msg)
+
+          if (!inpObj.checkValidity()) {
+            document.getElementById("demo").innerHTML = "Please enter your Firstname ";
+          }
+          if (!lastname.checkValidity()) {
+            document.getElementById("demo1").innerHTML = "Please enter your Lastname ";
+          }
+          if (!email.checkValidity()) {
+            document.getElementById("demo2").innerHTML = "Please enter your Email ID ";
+          }
+          if (!pasword.checkValidity()) {
+            document.getElementById("demo3").innerHTML = "Please enter your Pasword ";
+          }
+          if (mobile.leng){
+            document.getElementById("demo4").innerHTML = "Mobile Number must be 10 digit";
+            return false;
+          }
+          if(mobile.length>10){
+            document.getElementById("demo4").innerHTML ="Mobile Number must be 10 digit";
+            return false;
+        }
+      
+          if (!msg.checkValidity()) {
+            document.getElementById("demo5").innerHTML = "Please enter message ";
+          }
+        }
+        </script>
+<h3>Using CSS to style an HTML Form</h3>
+
+<div>
+<form>
+    <label for="fname">First Name</label>
+    <input id="myname" type="text" name="fname" placeholder="your first name.." pattern="[A-Za-z]{0,15}" title=" 15 characters allowed only" required>
+    <p id="demo" style="color: red;"></p>
+    <label for="lname">Last Name</label>
+    <input id ="lastname" type="text" name="lastname" placeholder="Your last name.." pattern="[A-Za-z]{0,15}" title=" 15 characters allowed only" required>
+    <p id="demo1" style="color: red;"></p>
+    <label for="fname">Email ID</label>
+   <input id ="EmailID" type="email" name="Email ID" placeholder=" Enter Your Emai ID"    title=" enter '@' and 15 characters only " required>
+     <p id="demo2" style="color: red;"></p>
+    <label for="fname" >Pasword</label>
+     <input id ="numb" type="text" name="Pasword" placeholder="Enter your Pasword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{0,15}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 15 characters only" required>
+    <p id="demo3" style="color: red;"></p>
+    <label for="fname">Mobile Number</label>
+   <input id ="mobilenumber" type="number" name="Mobile Number" placeholder=" Enter Your Moblie Number"  title="Enter only 10 number" required>
+     <p id="demo4" style="color: red;"></p>
+     <label for="fname">Massage</label>
+   <input id ="massage" type="text" name="Mobile Number" placeholder=" Enter Your Moblie Number"  required>
+     <p id="demo5" style="color: red;"></p>
+    <input type="submit" onclick="myFunction()" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
